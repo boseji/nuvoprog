@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/boseji/nuvoprog/protocol"
+	"nuvoprog/protocol"
 )
 
 type Config interface {

@@ -19,7 +19,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/boseji/nuvoprog/target"
+	"nuvoprog/target"
+
 	"github.com/spf13/cobra"
 )
 

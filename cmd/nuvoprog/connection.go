@@ -17,8 +17,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/boseji/nuvoprog/protocol"
-	"github.com/boseji/nuvoprog/target"
+	"nuvoprog/protocol"
+	"nuvoprog/target"
 )
 
 func connectToTarget() (*protocol.Device, *target.Definition, error) {

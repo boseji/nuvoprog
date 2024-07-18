@@ -1,4 +1,4 @@
-module github.com/boseji/nuvoprog
+module nuvoprog
 
 go 1.22.5
 
