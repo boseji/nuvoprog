@@ -1,6 +1,6 @@
-#nuvoprog - Nuvoton microcontroller programmer
+# `nuvoprog` - Nuvoton microcontroller programmer
 
-`nuvoprog` is an open source tool for programming Nuvoton microcontollers;
+`nuvoprog` is an open source tool for programming Nuvoton microcontrollers;
 previously, they could only be programmed under Windows using Nuvoton's
 proprietary tools. This tool assumes a Nuvoton NuLink family programmer
 or compatible; no support is provided (yet) for other programmers.
@@ -15,11 +15,10 @@ is provided.
 The tool provides integrated help
 
 Example usage:
-```
+```sh
 $ nuvoprog read -t n76e003 dev.ihx
 $ nuvoprog config decode -t n76e003 -i dev.ihx | tee config.json
 $ nuvoprog program -t n76e003 -c @config.json -a aprom.ihx -l ldrom.ihx
-
 ```
 
 You may also be interested in [libn76](https://github.com/erincandescent/libn76),
@@ -28,32 +27,37 @@ a SDCC-supporting BSP for the Nuvoton N76 family.
 *Cortex-M devices*: While I have no objections to someone adding support for
 these, have you considered OpenOCD?
 
-# Installing
-This is a Go project; install a Go toolchain and install it
-using `go get -u github.com/erincandescent/nuvoprog`. Ensure
-that `$GOPATH/bin` is on your path (`GOPATH` defaults to `$HOME/go`);
+## Installing
+
+This is a Go project; install a Go toolchain and install it using :
+
+```sh
+go install github.com/boseji/nuvoprog/cmd/nuvoprog@latest
+```
+
+Ensure that `$GOPATH/bin` is on your path (`GOPATH` defaults to `$HOME/go`);
 alternatively, move the resulting binary to a location of your choice.
 
 The `hidapi` and `libusb` packages are [vendored by our upstream](https://github.com/karalabe/hid)
 
-# Supported Devices
-## Programmers
+## Supported Devices
+### Programmers
 
- * Nu-Link-Me (as found on Nu-Tiny devboards)
+ * Nu-Link-Me (as found on Nu-Tiny development boards)
  * Nu-Link
 
-## Target and tested devices
+### Target and tested devices
 
  * N76E003
  * N76E616
  * N76E885
 
-# Missing functionality
+## Missing functionality
 
 * Firmware upgrades
 * Debugging?
 
-# Adding support for new devices
+## Adding support for new devices
 
 To add support for new devices, you will need:
 
@@ -65,21 +69,21 @@ A Wireshark dissector for the protocol can be found in the misc directory.
 
 Nuvoton have [an OpenOCD patch](http://openocd.zylin.com/#/c/4739/1) which you may find useful as reference material
 
-## Other NuLink Programmers
+### Other NuLink Programmers
 If this is a protocol v2 programmer, you'll need to add support for that (The leading length field
-changes from 8 to 16 bits, but othewise things are unchanged).
+changes from 8 to 16 bits, but otherwise things are unchanged).
 
 Add the VID and PID to the table in `protocol/device.go` and see if `nuvoprog` connects successfully.
 If it doesn't, compare protocol exchanges in Wireshark
 
-## Other Microcontrollers
+### Other Microcontrollers
 First step is to see if the microcontroller belongs to the same family and if the connection and
 programming flow is the same (The flow should be the same for the 8051T1 family, may differ for
 others).
 
-If they are, you probably just need to define target devide details:
+If they are, you probably just need to define target device details:
 
  * Configuration bit codec
  * Target definition (see `target/n76/n76e003.go`)
 
-You may need to get details like LDROM offsets from Wireshark dumps
+You may need to get details like `LDROM` offsets from Wireshark dumps
