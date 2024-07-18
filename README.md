@@ -17,7 +17,7 @@ The tool provides integrated help
 Example usage:
 ```
 $ nuvoprog read -t n76e003 dev.ihx
-$ nuvoprog config decode -i dev.ihx
+$ nuvoprog config decode -t n76e003 -i dev.ihx | tee config.json
 $ nuvoprog program -t n76e003 -c @config.json -a aprom.ihx -l ldrom.ihx
 
 ```
