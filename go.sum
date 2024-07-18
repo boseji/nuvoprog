@@ -1,6 +1,4 @@
 github.com/cpuguy83/go-md2man/v2 v2.0.4/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
-github.com/erincandescent/nuvoprog v0.0.0-20220630203948-8320a6db9c9b h1:E/CP2hXxZQXrscTUtHW3qBwmq1jPhnrkV/XquuB0aik=
-github.com/erincandescent/nuvoprog v0.0.0-20220630203948-8320a6db9c9b/go.mod h1:9Rz4tGYflVVhYC2xjLpKo8OqtoZb26WSampCfgoqVlY=
 github.com/fatih/color v1.17.0 h1:GlRw1BRJxkpqUCBKzKOw098ed57fEsKeNjpTe3cSjK4=
 github.com/fatih/color v1.17.0/go.mod h1:YZ7TlrGPkiz6ku9fK3TLD/pl3CpsiFyu8N92HLgmosI=
 github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
