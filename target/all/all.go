@@ -17,5 +17,5 @@
 package all
 
 import (
-	_ "nuvoprog/target/n76"
+	_ "github.com/boseji/nuvoprog/target/n76"
 )

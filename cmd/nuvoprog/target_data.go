@@ -25,8 +25,8 @@ import (
 	"os"
 	"strings"
 
-	"nuvoprog/ihex"
-	"nuvoprog/target"
+	"github.com/boseji/nuvoprog/ihex"
+	"github.com/boseji/nuvoprog/target"
 )
 
 type TargetData struct {

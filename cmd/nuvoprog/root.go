@@ -22,7 +22,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	_ "nuvoprog/target/all"
+	_ "github.com/boseji/nuvoprog/target/all"
 )
 
 // var cfgFile string

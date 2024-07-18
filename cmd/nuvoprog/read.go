@@ -15,7 +15,7 @@
 package main
 
 import (
-	"nuvoprog/protocol"
+	"github.com/boseji/nuvoprog/protocol"
 
 	"github.com/spf13/cobra"
 )

@@ -17,7 +17,7 @@ package main
 import (
 	"fmt"
 
-	"nuvoprog/protocol"
+	"github.com/boseji/nuvoprog/protocol"
 
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
