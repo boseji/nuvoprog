@@ -15,11 +15,29 @@ is provided.
 The tool provides integrated help
 
 Example usage:
-```sh
-$ nuvoprog read -t n76e003 dev.ihx
-$ nuvoprog config decode -t n76e003 -i dev.ihx | tee config.json
-$ nuvoprog program -t n76e003 -c @config.json -a aprom.ihx -l ldrom.ihx
-```
+
+1. Read back Flash Content from a `n76e003` into an IntelHex file `dev.ihx`:
+
+   ```sh
+   sudo nuvoprog read -t n76e003 dev.ihx
+   ```
+2. Decode the Configuration bits from the read back hex file `dev.ihx` into a JSON config file `config.json`:
+
+   ```sh
+   nuvoprog config decode -t n76e003 -i dev.ihx | tee config.json
+   ```
+
+   You can also pretty format it using the `jq` tool:
+
+   ```sh
+   nuvoprog config decode -t n76e003 -i dev.ihx | jq
+   ```
+
+3. Program an `n76e003` with configuration bits as in `config.json` the ISP/bootloader part in `aprom.ihx` and firmware in `ldrom.ihx`:
+
+   ```sh
+   sudo nuvoprog program -t n76e003 -c @config.json -a aprom.ihx -l ldrom.ihx
+   ```
 
 You may also be interested in [libn76](https://github.com/erincandescent/libn76),
 a SDCC-supporting BSP for the Nuvoton N76 family.
